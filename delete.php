@@ -1,10 +1,10 @@
 <?php
-// include database connection file
+// membuat koneksi ke database menggunakan file koneksi.php
 include_once("koneksi.php");
-// Get id from URL to delete that user
+// tangkap data nim dari URL untuk dihapus datanya
 $nim = $_GET['nim'];
-// Delete user row from table based on given id
+// menghapus data pada table mahasiswa yang sesuai dengan nim yang dikirimkan tadi
 $result = mysqli_query($con, "DELETE FROM mahasiswa WHERE nim='$nim'");
-// After delete redirect to Home, so that latest user list will be displayed.
+// setelah dihapus arahkan ke halaman utama untuk menampilkan data mahasiswa terbaru
 header("Location:index.php");
 ?>

@@ -1,28 +1,28 @@
 <?php
-// include database connection file
+// membuat koneksi ke database menggunakan file koneksi.php
 include_once("koneksi.php");
-// Check if form is submitted for user update, then redirect to homepage after update
-if(isset($_POST['update']))
-{ 
+// jika tombol update diklik, maka data akan terupdate dan mengarah ke halaman utama
+if(isset($_POST['update'])) {
+    // tangkap data-data yang dikirim dari form
     $nim = $_POST['nim'];
     $nama=$_POST['nama'];
     $jkel=$_POST['jkel'];
     $alamat=$_POST['alamat'];
     $tgllhr=$_POST['tgllhr'];
-    // update user data
+    // update data mahasiswa
     $result = mysqli_query($con, "UPDATE mahasiswa SET 
     nama='$nama',jkel='$jkel',alamat='$alamat',tgllhr='$tgllhr' WHERE nim='$nim'");
-    // Redirect to homepage to display updated user in list
+    // arahkan ke halaman utama untuk menampilkan hasil update
     header("Location: index.php");
 }
 ?>
 
 <?php
-// Display selected user data based on id
-// Getting id from url
+// tangkap data nim yang dikirimkan melalui URL
 $nim = $_GET['nim'];
-// Fetech user data based on id
+// mengambil data dari database dan menampilkannya berdasarkan nim yang ditangkap
 $result = mysqli_query($con, "SELECT * FROM mahasiswa WHERE nim='$nim'");
+// mengubah data dari hasil query menjadi array dengan menggunakan fungsi mysqli_fetch_assoc()
 while($user_data = mysqli_fetch_array($result))
 {
     $nim = $user_data['nim'];

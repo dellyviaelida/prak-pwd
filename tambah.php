@@ -34,19 +34,20 @@
         </table>
     </form>
     <?php
-    // Check If form submitted, insert form data into users table.
+    // jika tombol submit di klik, maka masukkan data ke tabel mahasiswa
     if(isset($_POST['Submit'])) {
+        // tangkap data-data yang dikirim dari form
         $nim = $_POST['nim'];
         $nama = $_POST['nama'];
         $jkel = $_POST['jkel'];
         $alamat = $_POST['alamat'];
         $tgllhr = $_POST['tgllhr'];
-        // include database connection file
+        // membuat koneksi ke database menggunakan file koneksi.php
         include_once("koneksi.php");
-        // Insert user data into table
+        // masukkan data mahasiswa ke tabel
         $result = mysqli_query($con, "INSERT INTO mahasiswa(nim,nama,jkel,alamat,tgllhr) 
         VALUES('$nim','$nama', '$jkel','$alamat','$tgllhr')");
-        // Show message when user added
+        // menampilkan pesan ketika data ditambah
         echo "Data berhasil disimpan. <a href='index.php'>View Users</a>";
     }
     ?>

@@ -1,7 +1,7 @@
 <?php
-// Create database connection using config file
+// membuat koneksi ke database menggunakan file koneksi.php
 include_once("koneksi.php");
-// Fetch all users data from database
+// ambil semua data yang ada pada tabel mahasiswa
 $result = mysqli_query($con, "SELECT * FROM mahasiswa ");
 ?>
 <html>
