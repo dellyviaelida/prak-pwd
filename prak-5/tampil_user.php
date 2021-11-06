@@ -6,9 +6,12 @@ echo "<h2>User</h2>
 <table>
 <tr><th>No</th><th>Username</th><th>NamaLengkap</th><th>Email</th><th>Aksi</th
 ></tr>";
+// membuat koneksi ke database menggunakan file koneksi.php
 include "../koneksi.php";
+// ambil semua data yang ada pada tabel users dan urutkan berdasarkan id_user
 $sql = "select * from users order by id_user";
 $tampil = mysqli_query($con,$sql);
+// jika data ada
 if (mysqli_num_rows($tampil) > 0) {
     $no=1;
     while ($r = mysqli_fetch_array($tampil)) {
@@ -21,6 +24,7 @@ if (mysqli_num_rows($tampil) > 0) {
     }
     echo "</table>";
 }
+// jika data tidak ada
 else {
     echo "0 results";
 }
