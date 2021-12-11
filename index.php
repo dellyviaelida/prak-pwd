@@ -28,5 +28,6 @@ $result = mysqli_query($con, "SELECT * FROM mahasiswa ");
         }
         ?>
     </table>
+    <br/><a href="prak-8/cetak.php"><button>Cetak</button></a>
 </body>
 </html>
