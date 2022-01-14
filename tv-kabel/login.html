@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <style type="text/css">
+            body {
+                font-family: candara;
+                background-image: url("tv.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            h3 {
+                text-align: center;
+                color: black;
+                font-size: 30px;
+                margin-top: 9%;
+                letter-spacing: 10px;
+            }
+            .kotak {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                width: 300px;
+                border-radius: 10px;
+                box-shadow: -1px -7px 20px 0px black;
+                color: white;
+                display: block;
+            }
+            .data {
+                position: relative;
+                display: block;
+                width: 90%;
+                height: 50px;
+            }
+            .text {
+                display: inline-block;
+                width: 100%;
+                border: 1px solid #8888;
+                padding: 10px;
+                border-radius: 3px;
+            }
+            .text:hover {
+                background: #8888;
+                color: white;
+            }
+            .tombol {
+                text-align: center;
+                margin: 20px 0;
+            }
+            .loginbtn {
+                background: linear-gradient(to right, indigo, purple, magenta, blue);
+                border: none;
+                color: white;
+                font-weight: bold;
+                letter-spacing: 3px;
+                cursor: pointer;
+                transition: background 0.5s ease-in-out;
+                width: 100%;
+                padding: 15px;
+                margin-top: 5px;
+                border-radius: 30px;
+                box-shadow: 0 0 7px 0px black;
+            }
+            .loginbtn:hover {
+                background: linear-gradient(to left, indigo, purple, magenta, blue);
+            }
+            .bawah {
+                text-align: center;
+            }
+            .bawah a {
+                text-decoration: none;
+                color: white;
+            }
+            .bawah a:hover {
+                color: lightblue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h3>LOGIN</h3>
+        <form action="proseslogin.php" method="POST" class="kotak" name="fform">
+            <div class="data">
+                <input type="text" placeholder="Username" name="username" class="text" required="" autofocus="">
+            </div>
+            <div class="data">
+                <input type="password" placeholder="Password" name="password" class="text" required="">
+            </div>
+            <div class="tombol">
+                <input type="submit" value="Submit" class="loginbtn">
+            </div>
+            <!--<div class="bawah">
+                Belum punya akun ?<a href="regis.php"> Daftar Sini!</a>
+            </div>-->
+        </form>
+    </body>
+</html>                                                                                                       
